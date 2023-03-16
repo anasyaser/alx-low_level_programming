@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * main Entry point
+ * main -  Entry point
  * Description: print specific string using printf function
- * Result: Always return 0 (succeful)
+ * Return: Always return 0 (succeful)
  */
 
 int main(void)
