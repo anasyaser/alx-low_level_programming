@@ -1,11 +1,11 @@
 #include "main.h"
 /**
- * print_alphabet_10x - print alphabet 10x
+ * print_alphabet_x10 - print alphabet x10
  * Description: print all alphabet in lowercase using puchar func only 10x
  * Return : void (none)
  */
 
-void print_alphabet_10x(void)
+void print_alphabet_x10(void)
 {
 	int x = 0;
 
