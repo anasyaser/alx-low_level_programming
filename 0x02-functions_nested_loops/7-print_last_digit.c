@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "main.h"
 
 /**
@@ -12,5 +13,6 @@ int print_last_digit(int c)
 	int last;
 
 	last = c % 10;
-	return (last);
+	_putchar(abs(last) + '0');
+	return (abs(last));
 }
