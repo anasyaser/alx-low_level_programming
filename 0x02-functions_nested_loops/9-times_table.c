@@ -13,9 +13,9 @@ void times_table(void)
 
 	while (inc <= 9)
 	{
-		int lim = 0;
+		int lim;
 
-		for (lim; lim <= 9; lim++)
+		for (lim = 0; lim <= 9; lim++)
 		{
 			int cur = inc * lim;
 
