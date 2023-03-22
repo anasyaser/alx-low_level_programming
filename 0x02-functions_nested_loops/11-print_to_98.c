@@ -3,16 +3,17 @@
 
 /**
  * print_to_98 - print from given num to 98.
+ *@n : number to start from
  *
  * Return: none
  */
 
-void print_to_98 (int n)
+void print_to_98(int n)
 {
 	int inc = 1;
 	int cur = n;
 
-	if (n > 98 )
+	if (n > 98)
 	{
 		inc *= -1;
 	}
