@@ -21,7 +21,10 @@ void times_table(void)
 
 			if (cur < 10)
 			{
+				if (lim != 0)
+				{
 				_putchar(' ');
+				}
 				_putchar(cur + '0');
 			} else
 			{
