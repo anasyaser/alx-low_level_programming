@@ -2,10 +2,10 @@
 #include "main.h"
 
 /**
- * print_triangle - print triangle using # in terminal.
- * @size: number to size of triangle
- *
- * Return: none
+ * print_nline - print line of specific character.
+ * @c: char to print
+ * @n: number of char per line.
+ * Return: void.
  */
 
 void print_nline(int c, int n)
@@ -17,6 +17,13 @@ void print_nline(int c, int n)
 		_putchar(c);
 	}
 }
+
+/**
+ * print_triangle - print triangle using # in terminal.
+ * @size: number to size of triangle
+ *
+ * Return: none
+ */
 
 void print_triangle(int size)
 {
