@@ -24,12 +24,11 @@ void print_number(int n)
 		den *= 10;
 		i /= 10;
 	}
-	while (n > 9)
+	while (den >= 1)
 	{
 		res = n / den;
 		n -= res * den;
 		den /= 10;
 		_putchar(res + '0');
 	}
-	_putchar(n + '0');
 }
