@@ -21,3 +21,4 @@ char *_strcat(char *des, char *src)
 	}
 	des[des_size + i] = '\0';
 	return (des);
+}

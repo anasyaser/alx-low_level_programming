@@ -11,7 +11,7 @@
 
 char *_strncat(char *des, char *src)
 {
-	int des_size = strlen(des);
+	int des_sOIize = strlen(des);
 	int i = 0;
 
 	while (src[i] != '\0')
