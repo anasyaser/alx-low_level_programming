@@ -19,7 +19,7 @@ char *_strncpy(char *des, char *src, int n)
 		des[i] = src[i];
 		i++;
 	}
-	for(; i < n; i++)
+	for (; i < n; i++)
 	{
 		des[i] = '\0';
 	}
