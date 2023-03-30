@@ -12,9 +12,9 @@ char *string_toupper(char *s)
 
 	while (s[i] != '\0')
 	{
-		if (*s > 96 && *s < 123)
+		if (*(s + i) > 96 && *(s + i) < 123)
 		{
-			*s -= 32;
+			*(s + i) -= 32;
 		}
 		i++;
 	}
