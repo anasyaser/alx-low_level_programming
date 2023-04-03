@@ -8,7 +8,7 @@
  */
 int main(void)
 {
-	char *s = "hello";
+	char *s = "heow";
 	char *f;
 
 	f = _strchr(s, 'l');
@@ -17,6 +17,9 @@ int main(void)
 	{
 		printf("%s\n", f);
 
+	}else
+	{
+		printf("try again\n");
 	}
 	return (0);
 
