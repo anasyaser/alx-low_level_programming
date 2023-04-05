@@ -16,7 +16,7 @@ int check_prime_helper(int n, int i)
 	if (i == n)
 		return (1);
 
-	return (n % i != 0) && check_prime_helper(n, i + 1);
+	return ((n % i != 0) && check_prime_helper(n, i + 1));
 }
 
 /**
