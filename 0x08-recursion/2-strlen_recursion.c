@@ -4,7 +4,7 @@
  * _strlen_recursion - calculate string length recursively
  *
  * @s: Stirng to calculate its length
- * Return : (int) String length
+ * Return: int represent String length
  */
 
 int _strlen_recursion(char *s)
