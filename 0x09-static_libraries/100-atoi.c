@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * atoi - not yet
+ * _atoi - not yet
  *
  * @s: string
  * Return: int number
