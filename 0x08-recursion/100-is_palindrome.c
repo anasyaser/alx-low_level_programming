@@ -13,6 +13,11 @@
 
 int is_palindrome_helper(char *s, int i)
 {
+	/**
+	 * Another shoreter approach is to modify the string and add '\0'
+	 * every step to mark the end of text (not tested)
+	 */
+
 	if (strlen(s) == 0)
 		return (1);
 
