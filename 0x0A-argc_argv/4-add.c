@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * main - multiply two number
+ * main - add arguments
  *
  * @argc: number of argumets
  * @argv: pointer array to progrmme arguments
@@ -12,13 +12,25 @@
 
 int main(int argc, char *argv[])
 {
-	if (argc < 3)
+	int result = 0;
+
+	if (argc <= 1)
 	{
-		printf("Error\n");
-		return (1);
+		printf("%d\n", result);
+		return (0);
 	}
 
-	printf("%d\n",(atoi(argv[1]) * atoi(argv[2])));
+	while (argc-- > 1)
+	{
+		if (!atoi(argv[argc]))
+		{
+			printf("Error\n");
+			return (0);
+		}
+		 result += atoi(argv[argc]);
+	}
+
+	printf("%d\n", result);
 	return (0);
 
 }
