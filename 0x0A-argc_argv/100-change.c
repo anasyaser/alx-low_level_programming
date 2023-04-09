@@ -13,16 +13,18 @@
 
 int main(int argc, char *argv[])
 {
-	int arg = atoi(argv[1]);
+	int arg;
 	int cnt = 0;
 	int avail[5] = {25, 10, 5, 2, 1};
 	int i = 0;
 
-	if (argc < 2)
+	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
+	if (argc == 2)
+		arg = atoi(argv[1]);
 
 	while (i < 5 && arg > 0)
 	{
