@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 /**
  * main - add arguments
@@ -14,15 +15,9 @@ int main(int argc, char *argv[])
 {
 	int result = 0;
 
-	if (argc <= 1)
-	{
-		printf("%d\n", result);
-		return (0);
-	}
-
 	while (argc-- > 1)
 	{
-		if (!atoi(argv[argc]))
+		if (!atoi(argv[argc]) && *argv[argc] != '0')
 		{
 			printf("Error\n");
 			return (0);
