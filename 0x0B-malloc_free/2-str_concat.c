@@ -33,18 +33,22 @@ char *str_concat(char *s1, char *s2)
 {
 	char *pr;
 	int i;
+	int total_s = _strlen(s1) + _strlen(s2);
 
-	if (!str)
+	if (!s1 && !s2)
 		return (NULL);
 
-	pr = malloc(_strlen(str) + 1);
+	pr = malloc(total_s + 1);
 
 	if (pr == NULL)
 		return (NULL);
 
-	while (i < _strlen(str))
+	while (i < total_s)
 	{
-		pr[i] = str[i];
+		if (i < _strlen(s1))
+			pr[i] = s1[i];
+		else
+			pr[i] = s2[i - _strlen(s1)];
 		i++;
 	}
 	pr[i] = '\0';

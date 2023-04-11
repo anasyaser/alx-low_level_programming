@@ -12,7 +12,7 @@ int main(void)
 {
 	char *s;
 
-	s = _strdup("anas yaser");
+	s = _strdup("First, solve the problem. Then, write the code.");
 	if (s == NULL)
 	{
 		printf("failed to allocate memory\n");
@@ -20,7 +20,6 @@ int main(void)
 
 	}
 	printf("%s\n", s);
-	printf("%lu\n", strlen(s));
 	free(s);
 	return (0);
 
