@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -11,7 +12,7 @@ int main(void)
 {
 	char *s;
 
-	s = _strdup("Alx SE anoos");
+	s = _strdup("anoos yaser");
 	if (s == NULL)
 	{
 		printf("failed to allocate memory\n");
@@ -19,6 +20,7 @@ int main(void)
 
 	}
 	printf("%s\n", s);
+	printf("%lu\n", strlen(s));
 	free(s);
 	return (0);
 
