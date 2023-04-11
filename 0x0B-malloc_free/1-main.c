@@ -12,7 +12,7 @@ int main(void)
 {
 	char *s;
 
-	s = _strdup("anoos yaser");
+	s = _strdup("anas yaser");
 	if (s == NULL)
 	{
 		printf("failed to allocate memory\n");

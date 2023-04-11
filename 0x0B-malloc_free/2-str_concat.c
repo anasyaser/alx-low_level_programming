@@ -22,13 +22,14 @@ int _strlen(char *s)
 }
 
 /**
- * _strdup - copy string to  an array using malloc
+ * str_concat - concatentate two strings to new memory location
  *
- * @str: string to copy
- * Return: pointer to an array of new memory allocation
+ * @s1: first string
+ * @s2: second string
+ * Return: pointer to an array of new memory allocation containing new string
  */
 
-char *_strdup(char *str)
+char *str_concat(char *s1, char *s2)
 {
 	char *pr;
 	int i;
