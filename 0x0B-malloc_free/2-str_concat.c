@@ -35,7 +35,7 @@ int _strlen(char *s)
 char *str_concat(char *s1, char *s2)
 {
 	char *pr;
-	int i;
+	int i = 0;
 	int total_s = _strlen(s1) + _strlen(s2);
 
 	if (!s1 && !s2)
