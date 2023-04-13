@@ -1,4 +1,5 @@
-#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 #include "main.h"
 
 /**
@@ -21,29 +22,4 @@ char *_memset(char *s, char b, unsigned int n)
 		inc++;
 	}
 	return (s);
-}
-
-/**
- * _calloc - work as malloc but with different arguments
- *
- * @nmemb: number of chuncks of specific size
- * @size: size of each chunck
- * Return: void pointer array
- */
-
-void *_calloc(unsigned int nmemb, unsigned int size)
-{
-	void *ptr;
-	unsigned int i = 0;
-	unsigned int comp = nmemb * size;
-
-	if (comp <= 0)
-		return (NULL);
-
-	ptr = malloc(comp);
-	if (ptr == NULL)
-		return (NULL);
-
-	_memset(ptr, 0, nmemb * size);
-	return (ptr);
 }
