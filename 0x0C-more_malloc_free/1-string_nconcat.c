@@ -53,12 +53,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	while (i < (size_1 + size_2))
 	{
-		while (i < size_1)
+		if (i < size_1)
 		{
 			ptr[i] = s1[i];
-			i++;
+		}else
+		{
+			ptr[i] = s2[i - size_1];
 		}
-		ptr[i] = s2[i - size_1];
 		i++;
 	}
 	ptr[i] = '\0';
