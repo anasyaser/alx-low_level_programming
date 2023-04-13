@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
 
@@ -42,7 +43,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if ((int)n > _strlen(s2))
 		size_2 = _strlen(s2);
 
+	if (s1 == NULL)
+		s1 = "";
+
 	ptr = malloc((size_1 + size_2) * sizeof(char) + 1);
+
 	if (ptr == NULL)
 		return (NULL);
 
