@@ -1,4 +1,4 @@
-#include "main.h"
+#include "dog.h"
 
 #ifndef MAIN_HEADER
 #define MAIN_HEADER
