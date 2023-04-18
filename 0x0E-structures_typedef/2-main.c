@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "dog.h"
+#include "main.h"
 
 /**
  * main - check the code
@@ -10,8 +11,10 @@ int main(void)
 {
 	struct dog my_dog;
 
-	init_dog(&my_dog, "Poppyyyy", 3.5, "Bob");
-	printf("My name is %s, and I am %.1f :) - Woof!\n", my_dog.name, my_dog.age);
+	my_dog.name = "Poppy";
+	my_dog.age = 3.5;
+	my_dog.owner = "Bob";
+	print_dog(&my_dog);
 	return (0);
 
 }
