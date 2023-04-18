@@ -1,4 +1,5 @@
-/** struct dog - dog data log
+/**
+ * struct dog - dog data log
  * @name: dog name
  * @age: the age of dog
  * @owner: the dog owner
@@ -11,5 +12,5 @@ struct dog
 {
 	char *name;
 	float age;
-	char* owner;
+	char *owner;
 };
