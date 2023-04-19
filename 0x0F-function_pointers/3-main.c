@@ -26,13 +26,13 @@ int main(int argc, char *argv[])
 	parm2 = atoi(argv[3]);
 	oper = argv[2];
 
-	if (!get_op_func(oper) || oper[1] == '\0')
+	if (!get_op_func(oper))
 	{
 		printf("Error\n");
 		exit(99);
 	}
 
-	if ((*oper == '/' && argv[3] == 0) || (*oper == '%' && argv[3] == 0))
+	if ((*oper == '/' && parm2 == 0) || (*oper == '%' && parm2 == 0))
 	{
 		printf("Error\n");
 		exit(100);
