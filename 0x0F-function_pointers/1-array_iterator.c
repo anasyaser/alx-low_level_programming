@@ -1,7 +1,7 @@
 #include "function_pointers.h"
 
 /**
- * array_iteratior - act action on array members
+ * array_iterator - act action on array members
  *
  * @array: array to be modified by action function
  * @size: array size
