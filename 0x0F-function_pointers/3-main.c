@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 	parm2 = atoi(argv[3]);
 	oper = argv[2];
 
-	if (!get_op_func(oper))
+	if (!get_op_func(oper) || oper[1] == '\0')
 	{
 		printf("Error\n");
 		exit(99);
