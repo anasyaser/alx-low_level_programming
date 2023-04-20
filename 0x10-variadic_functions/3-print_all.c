@@ -38,10 +38,9 @@ void print_all(const char * const format, ...)
 			printf("%s", is_str ? is_str : "(nil)");
 			is_valid = 1;
 		}
-		while (*(format + i + 1) != '\0' && is_valid)
+		if (*(format + i + 1) != '\0' && is_valid)
 		{
 			printf(", ");
-			break;
 		}
 		is_valid = 0;
 		i++;
