@@ -24,8 +24,13 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	for (i = 0; i < n; i++)
 	{
 		cur_str = va_arg(op, char*);
-		printf("%s", cur_str);
-		if (separator && i < n - 1 && cur_str)
+
+		if (cur_str)
+			printf("%s", cur_str);
+		else
+			printf("(nil)");
+
+		if (separator && i < n - 1)
 			printf("%s", separator);
 	}
 	va_end(op);
