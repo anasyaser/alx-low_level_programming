@@ -13,17 +13,13 @@
 void print_all(const char * const format, ...)
 {
 	int i = 0;
-	char is_valid = 0;
-	char *is_str;
+	char is_valid = 0, *is_str, cur = *(format);
 	va_list op;
-	char cur = *(format);
 
 	va_start(op, format);
-
 	while (cur)
 	{
 		cur = *(format + i);
-
 		if (cur == 'c')
 		{
 			printf("%c", va_arg(op, int));
@@ -42,17 +38,14 @@ void print_all(const char * const format, ...)
 			printf("%s", is_str ? is_str : "(nil)");
 			is_valid = 1;
 		}
-
 		while (*(format + i + 1) != '\0' && is_valid)
 		{
 			printf(", ");
 			break;
 		}
-
 		is_valid = 0;
 		i++;
 	}
-
 	va_end(op);
 	printf("\n");
 }
