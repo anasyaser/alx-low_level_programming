@@ -14,6 +14,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 {
 	unsigned int i;
 	va_list op;
+	char *cur_str;
 
 	if (n == 0)
 		return;
@@ -22,8 +23,9 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 	for (i = 0; i < n; i++)
 	{
-		printf("%s", va_arg(op, char*));
-		if (separator && i < n - 1)
+		cur_str = va_arg(op, char*);
+		printf("%s", cur_str);
+		if (separator && i < n - 1 && cur_str)
 			printf("%s", separator);
 	}
 	va_end(op);
