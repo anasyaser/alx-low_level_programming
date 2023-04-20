@@ -25,7 +25,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	{
 		cur_str = va_arg(op, char*);
 
-		if (cur_str)
+		if (cur_str && *cur_str)
 			printf("%s", cur_str);
 		else
 			printf("(nil)");
