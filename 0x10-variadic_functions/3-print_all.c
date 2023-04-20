@@ -13,11 +13,11 @@
 void print_all(const char * const format, ...)
 {
 	int i = 0;
-	char is_valid = 0, *is_str, cur = *(format);
+	char is_valid = 0, *is_str, cur;
 	va_list op;
 
 	va_start(op, format);
-	while (cur)
+	while (format && *(format + i))
 	{
 		cur = *(format + i);
 		if (cur == 'c')
