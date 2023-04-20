@@ -3,14 +3,14 @@
 #include "variadic_functions.h"
 
 /**
- * print_numbers - print all argment numbers
+ * print_strings - print all argment numbers
  *
  * @separator: separator between numbers
  * @n: number of integers to print
  * Return: None
  */
 
-void print_numbers(const char *separator, const unsigned int n, ...)
+void print_strings(const char *separator, const unsigned int n, ...)
 {
 	unsigned int i;
 	va_list op;
@@ -22,7 +22,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 
 	for (i = 0; i < n; i++)
 	{
-		printf("%d", va_arg(op, int));
+		printf("%s", va_arg(op, char*));
 		if (separator && i < n - 1)
 			printf("%s", separator);
 	}
