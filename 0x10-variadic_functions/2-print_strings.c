@@ -16,16 +16,13 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	va_list op;
 	char *cur_str;
 
-	if (n == 0)
-		return;
-
 	va_start(op, n);
 
 	for (i = 0; i < n; i++)
 	{
 		cur_str = va_arg(op, char*);
 
-		if (cur_str && *cur_str)
+		if (cur_str)
 			printf("%s", cur_str);
 		else
 			printf("(nil)");
