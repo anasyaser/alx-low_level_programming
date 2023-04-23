@@ -181,6 +181,7 @@ julien@ubuntu:~/c/0x00$ cat -v main.o | head
 -------------------------------------------------------------------------------
 
 #### 2. Assembler ####
+
 Write a script that generates the assembly code of a C code and save it in an output file.
 
 - The C file name will be saved in the variable `$CFILE`
@@ -188,7 +189,7 @@ Write a script that generates the assembly code of a C code and save it in an ou
 Example: if the C file is `main.c`, the output file should be `main.s`
 
 
-  ```
+```
 julien@ubuntu:~/c/0x00$ export CFILE=main.c
 julien@ubuntu:~/c/0x00$ cat main.c
 #include <stdio.h>
@@ -227,10 +228,8 @@ main:
     .size   main, .-main
     .ident  "GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.2) 5.4.0 20160609"
     .section    .note.GNU-stack,"",@progbits
-julien@ubuntu:~/c/0x00$ 
-  ```
-
-
+julien@ubuntu:~/c/0x00$
+```
 
 **Repo**:
 - GitHub repository: `alx-low_level_programming`
@@ -445,5 +444,3 @@ julien@ubuntu:~/c/0x00$
 -  GitHub repository: `alx-low_level_programming`
 - Directory: `0x00-hello_world`
 - File: `101-quote.c`
-
--------------------------------------------------------------------------------
