@@ -49,3 +49,8 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 
 	return (new_node);
 }
+
+/*
+ * Below solution is complicated you can use while (idx > 1) and it
+ * will make the code simpler and easier
+ */
