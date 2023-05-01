@@ -11,6 +11,7 @@
 int main(void)
 {
 	listint_t *head;
+	listint_t *new;
 
 	head = NULL;
 	add_nodeint_end(&head, 0);
@@ -24,6 +25,8 @@ int main(void)
 	print_listint(head);
 	printf("-----------------\n");
 	insert_nodeint_at_index(&head, 5, 4096);
+	insert_nodeint_at_index(&head, 0, 199);
+	new = insert_nodeint_at_index(&head, 10, 200);
 	print_listint(head);
 	free_listint2(&head);
 	return (0);
