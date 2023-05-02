@@ -1,8 +1,17 @@
 #include "lists.h"
 
+/**
+ * in_array - check if pointer in array
+ *
+ * @arr: array of pointers
+ * @val: pointer to check if exist
+ * Return: (int) 1 if exist else 0
+ */
+
 int in_array(const listint_t **arr, const listint_t *val)
 {
 	int cnt = 0;
+
 	if (!arr)
 		return (0);
 	while (arr[cnt])
@@ -28,12 +37,12 @@ size_t print_listint_safe(const listint_t *head)
 
 	while (head && !(in_array(add_arr, head)))
 	{
-		add_arr = realloc(add_arr, sizeof(add_arr)*(cnt + 1));
+		add_arr = realloc(add_arr, sizeof(add_arr) * (cnt + 1));
 		if (add_arr == NULL)
-			exit (98);
+			exit(98);
 
 		add_arr[cnt] = head;
-		printf("[%p] %d\n",(void *)head, head->n);
+		printf("[%p] %d\n", (void *)head, head->n);
 		head = head->next;
 		cnt++;
 	}
