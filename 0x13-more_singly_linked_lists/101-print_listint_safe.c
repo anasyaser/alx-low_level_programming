@@ -35,7 +35,7 @@ size_t print_listint_safe(const listint_t *head)
 	size_t cnt = 0;
 	const listint_t **add_arr = NULL;
 
-	while (head && !(in_array(add_arr, head)))
+	while (head)
 	{
 		add_arr = realloc(add_arr, sizeof(add_arr) * (cnt + 1));
 		if (add_arr == NULL)
@@ -45,6 +45,12 @@ size_t print_listint_safe(const listint_t *head)
 		printf("[%p] %d\n", (void *)head, head->n);
 		head = head->next;
 		cnt++;
+
+		if (in_array(add_arr, head))
+		{
+			printf("-> [%p] %d\n", (void *)head, head->n);
+			break;
+		}
 	}
 	free(add_arr);
 	return (cnt);

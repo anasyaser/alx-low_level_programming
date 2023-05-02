@@ -13,6 +13,7 @@ int main(void)
 	listint_t *head2;
 	listint_t *head;
 	listint_t *node;
+	size_t n;
 
 	head2 = NULL;
 	add_nodeint(&head2, 0);
@@ -31,10 +32,11 @@ int main(void)
 	add_nodeint(&head, 2);
 	add_nodeint(&head, 3);
 	add_nodeint(&head, 4);
-	add_nodeint(&head, 98);
+	node->next = add_nodeint(&head, 98);
 	add_nodeint(&head, 402);
-	node->next = add_nodeint(&head, 1024);
-	print_listint_safe(head);
+	add_nodeint(&head, 1024);
+	n = print_listint_safe(head);
+	printf("%lu\n", n);
 	return (0);
 
 }
