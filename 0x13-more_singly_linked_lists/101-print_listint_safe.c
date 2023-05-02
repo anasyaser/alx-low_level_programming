@@ -32,7 +32,7 @@ size_t print_listint_safe(const listint_t *head)
 		if (add_arr == NULL)
 			exit (98);
 		add_arr[cnt] = head;
-		printf("[%p] %d\n", head, head->n);
+		printf("[%p] %d\n",(void *)head, head->n);
 		head = head->next;
 		cnt++;
 	}
