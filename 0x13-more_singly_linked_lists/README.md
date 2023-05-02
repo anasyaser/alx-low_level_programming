@@ -53,17 +53,17 @@
 <p>Please use this data structure for this project:</p>
 
 <pre><code>/**
- * struct listint_s - singly linked list
- * @n: integer
- * @next: points to the next node
- *
- * Description: singly linked list node structure
- * 
- */
+* struct listint_s - singly linked list
+* @n: integer
+* @next: points to the next node
+*
+* Description: singly linked list node structure
+* 
+*/
 typedef struct listint_s
 {
-    int n;
-    struct listint_s *next;
+int n;
+struct listint_s *next;
 } listint_t;
 </code></pre>
 
@@ -73,49 +73,49 @@ typedef struct listint_s
 
 <h3 class="panel-title">
 0. Print list
-</h3>
+   </h3>
 
-<p>Write a function that prints all the elements of a <code>listint_t</code> list.</p>
+   <p>Write a function that prints all the elements of a <code>listint_t</code> list.</p>
 
-<ul>
-<li>Prototype: <code>size_t print_listint(const listint_t *h);</code></li>
-<li>Return: the number of nodes</li>
-<li>Format: see example</li>
-<li>You are allowed to use <code>printf</code></li>
-</ul>
+   <ul>
+   <li>Prototype: <code>size_t print_listint(const listint_t *h);</code></li>
+   <li>Return: the number of nodes</li>
+   <li>Format: see example</li>
+   <li>You are allowed to use <code>printf</code></li>
+   </ul>
 
-<pre><code>julien@ubuntu:~/0x13. More singly linked lists$ cat 0-main.c 
-#include &lt;stdlib.h&gt;
-#include &lt;string.h&gt;
-#include &lt;stdio.h&gt;
-#include &quot;lists.h&quot;
+   <pre><code>julien@ubuntu:~/0x13. More singly linked lists$ cat 0-main.c 
+   #include &lt;stdlib.h&gt;
+   #include &lt;string.h&gt;
+   #include &lt;stdio.h&gt;
+   #include &quot;lists.h&quot;
 
-/**
- * main - check the code
- * 
- * Return: Always 0.
- */
+   /**
+* main - check the code
+* 
+* Return: Always 0.
+*/
 int main(void)
 {
-    listint_t *head;
-    listint_t *new;
-    listint_t hello = {8, NULL};
-    size_t n;
+listint_t *head;
+listint_t *new;
+listint_t hello = {8, NULL};
+size_t n;
 
-    head = &amp;hello;
-    new = malloc(sizeof(listint_t));
-    if (new == NULL)
-    {
-        printf(&quot;Error\n&quot;);
-        return (1);
-    }
-    new-&gt;n = 9;
-    new-&gt;next = head;
-    head = new;
-    n = print_listint(head);
-    printf(&quot;-&gt; %lu elements\n&quot;, n);
-    free(new);
-    return (0);
+head = &amp;hello;
+new = malloc(sizeof(listint_t));
+if (new == NULL)
+{
+printf(&quot;Error\n&quot;);
+return (1);
+}
+new-&gt;n = 9;
+new-&gt;next = head;
+head = new;
+n = print_listint(head);
+printf(&quot;-&gt; %lu elements\n&quot;, n);
+free(new);
+return (0);
 }
 julien@ubuntu:~/0x13. More singly linked lists$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 0-main.c 0-print_listint.c -o a
 julien@ubuntu:~/0x13. More singly linked lists$ ./a 
@@ -133,12 +133,12 @@ julien@ubuntu:~/0x13. More singly linked lists$
 <li>File: <code>0-print_listint.c</code></li>
 </ul>
 
-    <h3 class="panel-title">
-      1. List length
-    </h3>
+<h3 class="panel-title">
+   1. List length
+      </h3>
 
 
-    <p>Write a function that returns the number of elements in a linked <code>listint_t</code> list.</p>
+<p>Write a function that returns the number of elements in a linked <code>listint_t</code> list.</p>
 
 <ul>
 <li>Prototype: <code>size_t listint_len(const listint_t *h);</code></li>
@@ -151,31 +151,31 @@ julien@ubuntu:~/0x13. More singly linked lists$
 #include &quot;lists.h&quot;
 
 /**
- * main - check the code
- *
- * Return: Always 0.
- */
+* main - check the code
+*
+* Return: Always 0.
+*/
 int main(void)
 {
-    listint_t *head;
-    listint_t *new;
-    listint_t hello = {8, NULL};
-    size_t n;
+listint_t *head;
+listint_t *new;
+listint_t hello = {8, NULL};
+size_t n;
 
-    head = &amp;hello;
-    new = malloc(sizeof(listint_t));
-    if (new == NULL)
-    {
-        printf(&quot;Error\n&quot;);
-        return (1);
-    }
-    new-&gt;n = 9;
-    new-&gt;next = head;
-    head = new;
-    n = listint_len(head);
-    printf(&quot;-&gt; %lu elements\n&quot;, n);
-    free(new);
-    return (0);
+head = &amp;hello;
+new = malloc(sizeof(listint_t));
+if (new == NULL)
+{
+printf(&quot;Error\n&quot;);
+return (1);
+}
+new-&gt;n = 9;
+new-&gt;next = head;
+head = new;
+n = listint_len(head);
+printf(&quot;-&gt; %lu elements\n&quot;, n);
+free(new);
+return (0);
 }
 julien@ubuntu:~/0x13. More singly linked lists$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 1-main.c 1-listint_len.c -o b
 julien@ubuntu:~/0x13. More singly linked lists$ ./b 
@@ -184,19 +184,19 @@ julien@ubuntu:~/0x13. More singly linked lists$
 </code></pre>
 
 
-        <p><strong>Repo:</strong></p>
-        <ul>
-          <li>GitHub repository: <code>alx-low_level_programming</code></li>
-            <li>Directory: <code>0x13-more_singly_linked_lists</code></li>
-            <li>File: <code>1-listint_len.c</code></li>
-        </ul>
+<p><strong>Repo:</strong></p>
+<ul>
+<li>GitHub repository: <code>alx-low_level_programming</code></li>
+<li>Directory: <code>0x13-more_singly_linked_lists</code></li>
+<li>File: <code>1-listint_len.c</code></li>
+</ul>
 
-    <h3 class="panel-title">
-      2. Add node
-    </h3>
+<h3 class="panel-title">
+2. Add node
+   </h3>
 
 
-    <p>Write a function that adds a new node at the beginning of a <code>listint_t</code> list.</p>
+<p>Write a function that adds a new node at the beginning of a <code>listint_t</code> list.</p>
 
 <ul>
 <li>Prototype: <code>listint_t *add_nodeint(listint_t **head, const int n);</code></li>
@@ -210,25 +210,25 @@ julien@ubuntu:~/0x13. More singly linked lists$
 #include &quot;lists.h&quot;
 
 /**
- * main - check the code
- *
- * Return: Always 0.
- */
+* main - check the code
+*
+* Return: Always 0.
+*/
 int main(void)
 {
-    listint_t *head;
+listint_t *head;
 
-    head = NULL;
-    add_nodeint(&amp;head, 0);
-    add_nodeint(&amp;head, 1);
-    add_nodeint(&amp;head, 2);
-    add_nodeint(&amp;head, 3);
-    add_nodeint(&amp;head, 4);
-    add_nodeint(&amp;head, 98);
-    add_nodeint(&amp;head, 402);
-    add_nodeint(&amp;head, 1024);
-    print_listint(head);
-    return (0);
+head = NULL;
+add_nodeint(&amp;head, 0);
+add_nodeint(&amp;head, 1);
+add_nodeint(&amp;head, 2);
+add_nodeint(&amp;head, 3);
+add_nodeint(&amp;head, 4);
+add_nodeint(&amp;head, 98);
+add_nodeint(&amp;head, 402);
+add_nodeint(&amp;head, 1024);
+print_listint(head);
+return (0);
 }
 julien@ubuntu:~/0x13. More singly linked lists$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 2-main.c 2-add_nodeint.c 0-print_listint.c -o c
 julien@ubuntu:~/0x13. More singly linked lists$ ./c 
@@ -244,19 +244,19 @@ julien@ubuntu:~/0x13. More singly linked lists$
 </code></pre>
 
 
-        <p><strong>Repo:</strong></p>
-        <ul>
-          <li>GitHub repository: <code>alx-low_level_programming</code></li>
-            <li>Directory: <code>0x13-more_singly_linked_lists</code></li>
-            <li>File: <code>2-add_nodeint.c</code></li>
-        </ul>
+<p><strong>Repo:</strong></p>
+<ul>
+<li>GitHub repository: <code>alx-low_level_programming</code></li>
+<li>Directory: <code>0x13-more_singly_linked_lists</code></li>
+<li>File: <code>2-add_nodeint.c</code></li>
+</ul>
 
-    <h3 class="panel-title">
-      3. Add node at the end
-    </h3>
+<h3 class="panel-title">
+3. Add node at the end
+   </h3>
 
 
-    <p>Write a function that adds a new node at the end of a <code>listint_t</code> list.</p>
+<p>Write a function that adds a new node at the end of a <code>listint_t</code> list.</p>
 
 <ul>
 <li>Prototype: <code>listint_t *add_nodeint_end(listint_t **head, const int n);</code></li>
@@ -270,25 +270,25 @@ julien@ubuntu:~/0x13. More singly linked lists$
 #include &quot;lists.h&quot;
 
 /**
- * main - check the code
- *
- * Return: Always 0.
- */
+* main - check the code
+*
+* Return: Always 0.
+*/
 int main(void)
 {
-    listint_t *head;
+listint_t *head;
 
-    head = NULL;
-    add_nodeint_end(&amp;head, 0);
-    add_nodeint_end(&amp;head, 1);
-    add_nodeint_end(&amp;head, 2);
-    add_nodeint_end(&amp;head, 3);
-    add_nodeint_end(&amp;head, 4);
-    add_nodeint_end(&amp;head, 98);
-    add_nodeint_end(&amp;head, 402);
-    add_nodeint_end(&amp;head, 1024);
-    print_listint(head);
-    return (0);
+head = NULL;
+add_nodeint_end(&amp;head, 0);
+add_nodeint_end(&amp;head, 1);
+add_nodeint_end(&amp;head, 2);
+add_nodeint_end(&amp;head, 3);
+add_nodeint_end(&amp;head, 4);
+add_nodeint_end(&amp;head, 98);
+add_nodeint_end(&amp;head, 402);
+add_nodeint_end(&amp;head, 1024);
+print_listint(head);
+return (0);
 }
 julien@ubuntu:~/0x13. More singly linked lists$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 3-main.c 3-add_nodeint_end.c 0-print_listint.c -o d
 julien@ubuntu:~/0x13. More singly linked lists$ ./d 
@@ -304,19 +304,19 @@ julien@ubuntu:~/0x13. More singly linked lists$
 </code></pre>
 
 
-        <p><strong>Repo:</strong></p>
-        <ul>
-          <li>GitHub repository: <code>alx-low_level_programming</code></li>
-            <li>Directory: <code>0x13-more_singly_linked_lists</code></li>
-            <li>File: <code>3-add_nodeint_end.c</code></li>
-        </ul>
+<p><strong>Repo:</strong></p>
+<ul>
+<li>GitHub repository: <code>alx-low_level_programming</code></li>
+<li>Directory: <code>0x13-more_singly_linked_lists</code></li>
+<li>File: <code>3-add_nodeint_end.c</code></li>
+</ul>
 
-    <h3 class="panel-title">
-      4. Free list
-    </h3>
+<h3 class="panel-title">
+4. Free list
+   </h3>
 
 
-    <p>Write a function that frees a <code>listint_t</code> list.</p>
+<p>Write a function that frees a <code>listint_t</code> list.</p>
 
 <ul>
 <li>Prototype: <code>void free_listint(listint_t *head);</code></li>
@@ -329,27 +329,27 @@ julien@ubuntu:~/0x13. More singly linked lists$
 #include &quot;lists.h&quot;
 
 /**
- * main - check the code
- *
- * Return: Always 0.
- */
+* main - check the code
+*
+* Return: Always 0.
+*/
 int main(void)
 {
-    listint_t *head;
+listint_t *head;
 
-    head = NULL;
-    add_nodeint_end(&amp;head, 0);
-    add_nodeint_end(&amp;head, 1);
-    add_nodeint_end(&amp;head, 2);
-    add_nodeint_end(&amp;head, 3);
-    add_nodeint_end(&amp;head, 4);
-    add_nodeint_end(&amp;head, 98);
-    add_nodeint_end(&amp;head, 402);
-    add_nodeint_end(&amp;head, 1024);
-    print_listint(head);
-    free_listint(head);
-    head = NULL;
-    return (0);
+head = NULL;
+add_nodeint_end(&amp;head, 0);
+add_nodeint_end(&amp;head, 1);
+add_nodeint_end(&amp;head, 2);
+add_nodeint_end(&amp;head, 3);
+add_nodeint_end(&amp;head, 4);
+add_nodeint_end(&amp;head, 98);
+add_nodeint_end(&amp;head, 402);
+add_nodeint_end(&amp;head, 1024);
+print_listint(head);
+free_listint(head);
+head = NULL;
+return (0);
 }
 julien@ubuntu:~/0x13. More singly linked lists$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 4-main.c 3-add_nodeint_end.c 0-print_listint.c 4-free_listint.c -o e
 julien@ubuntu:~/0x13. More singly linked lists$ valgrind ./e 
@@ -379,19 +379,19 @@ julien@ubuntu:~/0x13. More singly linked lists$
 </code></pre>
 
 
-        <p><strong>Repo:</strong></p>
-        <ul>
-          <li>GitHub repository: <code>alx-low_level_programming</code></li>
-            <li>Directory: <code>0x13-more_singly_linked_lists</code></li>
-            <li>File: <code>4-free_listint.c</code></li>
-        </ul>
+<p><strong>Repo:</strong></p>
+<ul>
+<li>GitHub repository: <code>alx-low_level_programming</code></li>
+<li>Directory: <code>0x13-more_singly_linked_lists</code></li>
+<li>File: <code>4-free_listint.c</code></li>
+</ul>
 
-    <h3 class="panel-title">
-      5. Free
-    </h3>
+<h3 class="panel-title">
+5. Free
+   </h3>
 
 
-    <p>Write a function that frees a <code>listint_t</code> list.</p>
+<p>Write a function that frees a <code>listint_t</code> list.</p>
 
 <ul>
 <li>Prototype: <code>void free_listint2(listint_t **head);</code></li>
@@ -405,27 +405,27 @@ julien@ubuntu:~/0x13. More singly linked lists$
 #include &quot;lists.h&quot;
 
 /**
- * main - check the code
- *
- * Return: Always 0.
- */
+* main - check the code
+*
+* Return: Always 0.
+*/
 int main(void)
 {
-    listint_t *head;
+listint_t *head;
 
-    head = NULL;
-    add_nodeint_end(&amp;head, 0);
-    add_nodeint_end(&amp;head, 1);
-    add_nodeint_end(&amp;head, 2);
-    add_nodeint_end(&amp;head, 3);
-    add_nodeint_end(&amp;head, 4);
-    add_nodeint_end(&amp;head, 98);
-    add_nodeint_end(&amp;head, 402);
-    add_nodeint_end(&amp;head, 1024);
-    print_listint(head);
-    free_listint2(&amp;head);
-    printf(&quot;%p\n&quot;, (void *)head);
-    return (0);
+head = NULL;
+add_nodeint_end(&amp;head, 0);
+add_nodeint_end(&amp;head, 1);
+add_nodeint_end(&amp;head, 2);
+add_nodeint_end(&amp;head, 3);
+add_nodeint_end(&amp;head, 4);
+add_nodeint_end(&amp;head, 98);
+add_nodeint_end(&amp;head, 402);
+add_nodeint_end(&amp;head, 1024);
+print_listint(head);
+free_listint2(&amp;head);
+printf(&quot;%p\n&quot;, (void *)head);
+return (0);
 }
 julien@ubuntu:~/0x13. More singly linked lists$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 5-main.c 3-add_nodeint_end.c 0-print_listint.c 5-free_listint2.c -o f
 julien@ubuntu:~/0x13. More singly linked lists$ valgrind ./f 
@@ -456,19 +456,19 @@ julien@ubuntu:~/0x13. More singly linked lists$
 </code></pre>
 
 
-        <p><strong>Repo:</strong></p>
-        <ul>
-          <li>GitHub repository: <code>alx-low_level_programming</code></li>
-            <li>Directory: <code>0x13-more_singly_linked_lists</code></li>
-            <li>File: <code>5-free_listint2.c</code></li>
-        </ul>
+<p><strong>Repo:</strong></p>
+<ul>
+<li>GitHub repository: <code>alx-low_level_programming</code></li>
+<li>Directory: <code>0x13-more_singly_linked_lists</code></li>
+<li>File: <code>5-free_listint2.c</code></li>
+</ul>
 
-    <h3 class="panel-title">
-      6. Pop
-    </h3>
+<h3 class="panel-title">
+6. Pop
+   </h3>
 
 
-    <p>Write a function that deletes the head node of a <code>listint_t</code> linked list, and returns the head node&rsquo;s data (n).</p>
+<p>Write a function that deletes the head node of a <code>listint_t</code> linked list, and returns the head node&rsquo;s data (n).</p>
 
 <ul>
 <li>Prototype: <code>int pop_listint(listint_t **head);</code></li>
@@ -482,34 +482,34 @@ julien@ubuntu:~/0x13. More singly linked lists$
 #include &quot;lists.h&quot;
 
 /**
- * main - check the code
- *
- * Return: Always 0.
- */
+* main - check the code
+*
+* Return: Always 0.
+*/
 int main(void)
 {
-    listint_t *head;
-    int n;
+listint_t *head;
+int n;
 
-    head = NULL;
-    add_nodeint_end(&amp;head, 0);
-    add_nodeint_end(&amp;head, 1);
-    add_nodeint_end(&amp;head, 2);
-    add_nodeint_end(&amp;head, 3);
-    add_nodeint_end(&amp;head, 4);
-    add_nodeint_end(&amp;head, 98);
-    add_nodeint_end(&amp;head, 402);
-    add_nodeint_end(&amp;head, 1024);
-    print_listint(head);
-    n = pop_listint(&amp;head);
-    printf(&quot;- %d\n&quot;, n);
-    print_listint(head);
-    n = pop_listint(&amp;head);
-    printf(&quot;- %d\n&quot;, n);
-    print_listint(head);
-    free_listint2(&amp;head);
-    printf(&quot;%p\n&quot;, (void *)head);
-    return (0);
+head = NULL;
+add_nodeint_end(&amp;head, 0);
+add_nodeint_end(&amp;head, 1);
+add_nodeint_end(&amp;head, 2);
+add_nodeint_end(&amp;head, 3);
+add_nodeint_end(&amp;head, 4);
+add_nodeint_end(&amp;head, 98);
+add_nodeint_end(&amp;head, 402);
+add_nodeint_end(&amp;head, 1024);
+print_listint(head);
+n = pop_listint(&amp;head);
+printf(&quot;- %d\n&quot;, n);
+print_listint(head);
+n = pop_listint(&amp;head);
+printf(&quot;- %d\n&quot;, n);
+print_listint(head);
+free_listint2(&amp;head);
+printf(&quot;%p\n&quot;, (void *)head);
+return (0);
 }
 julien@ubuntu:~/0x13. More singly linked lists$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 6-main.c 3-add_nodeint_end.c 0-print_listint.c 5-free_listint2.c 6-pop_listint.c -o g
 julien@ubuntu:~/0x13. More singly linked lists$ valgrind ./g 
@@ -526,48 +526,48 @@ julien@ubuntu:~/0x13. More singly linked lists$ valgrind ./g
 98
 402
 1024
-- 0
-1
-2
-3
-4
-98
-402
-1024
-- 1
-2
-3
-4
-98
-402
-1024
-(nil)
-==4369== 
-==4369== HEAP SUMMARY:
-==4369==     in use at exit: 0 bytes in 0 blocks
-==4369==   total heap usage: 9 allocs, 9 frees, 1,152 bytes allocated
-==4369== 
-==4369== All heap blocks were freed -- no leaks are possible
-==4369== 
-==4369== For counts of detected and suppressed errors, rerun with: -v
-==4369== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
-julien@ubuntu:~/0x13. More singly linked lists$ 
-</code></pre>
+    - 0
+      1
+      2
+      3
+      4
+      98
+      402
+      1024
+      - 1
+	2
+	3
+	4
+	98
+	402
+	1024
+	(nil)
+	==4369== 
+	==4369== HEAP SUMMARY:
+	==4369==     in use at exit: 0 bytes in 0 blocks
+	==4369==   total heap usage: 9 allocs, 9 frees, 1,152 bytes allocated
+	==4369== 
+	==4369== All heap blocks were freed -- no leaks are possible
+	==4369== 
+	==4369== For counts of detected and suppressed errors, rerun with: -v
+	==4369== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+	julien@ubuntu:~/0x13. More singly linked lists$ 
+	</code></pre>
 
 
-        <p><strong>Repo:</strong></p>
-        <ul>
-          <li>GitHub repository: <code>alx-low_level_programming</code></li>
-            <li>Directory: <code>0x13-more_singly_linked_lists</code></li>
-            <li>File: <code>6-pop_listint.c</code></li>
-        </ul>
+<p><strong>Repo:</strong></p>
+<ul>
+<li>GitHub repository: <code>alx-low_level_programming</code></li>
+<li>Directory: <code>0x13-more_singly_linked_lists</code></li>
+<li>File: <code>6-pop_listint.c</code></li>
+</ul>
 
-    <h3 class="panel-title">
-      7. Get node at index
-    </h3>
+<h3 class="panel-title">
+7. Get node at index
+   </h3>
 
 
-    <p>Write a function that returns the nth node of a <code>listint_t</code> linked list.</p>
+<p>Write a function that returns the nth node of a <code>listint_t</code> linked list.</p>
 
 <ul>
 <li>Prototype: <code>listint_t *get_nodeint_at_index(listint_t *head, unsigned int index);</code></li>
@@ -582,30 +582,30 @@ julien@ubuntu:~/0x13. More singly linked lists$
 #include &quot;lists.h&quot;
 
 /**
- * main - check the code
- *
- * Return: Always 0.
- */
+* main - check the code
+*
+* Return: Always 0.
+*/
 int main(void)
 {
-    listint_t *head;
-    listint_t *node;
+listint_t *head;
+listint_t *node;
 
-    head = NULL;
-    add_nodeint_end(&amp;head, 0);
-    add_nodeint_end(&amp;head, 1);
-    add_nodeint_end(&amp;head, 2);
-    add_nodeint_end(&amp;head, 3);
-    add_nodeint_end(&amp;head, 4);
-    add_nodeint_end(&amp;head, 98);
-    add_nodeint_end(&amp;head, 402);
-    add_nodeint_end(&amp;head, 1024);
-    print_listint(head);
-    node = get_nodeint_at_index(head, 5);
-    printf(&quot;%d\n&quot;, node-&gt;n);
-    print_listint(head);
-    free_listint2(&amp;head);
-    return (0);
+head = NULL;
+add_nodeint_end(&amp;head, 0);
+add_nodeint_end(&amp;head, 1);
+add_nodeint_end(&amp;head, 2);
+add_nodeint_end(&amp;head, 3);
+add_nodeint_end(&amp;head, 4);
+add_nodeint_end(&amp;head, 98);
+add_nodeint_end(&amp;head, 402);
+add_nodeint_end(&amp;head, 1024);
+print_listint(head);
+node = get_nodeint_at_index(head, 5);
+printf(&quot;%d\n&quot;, node-&gt;n);
+print_listint(head);
+free_listint2(&amp;head);
+return (0);
 }
 julien@ubuntu:~/0x13. More singly linked lists$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 7-main.c 3-add_nodeint_end.c 0-print_listint.c 5-free_listint2.c 7-get_nodeint.c -o h
 julien@ubuntu:~/0x13. More singly linked lists$ ./h 
@@ -630,19 +630,19 @@ julien@ubuntu:~/0x13. More singly linked lists$
 </code></pre>
 
 
-        <p><strong>Repo:</strong></p>
-        <ul>
-          <li>GitHub repository: <code>alx-low_level_programming</code></li>
-            <li>Directory: <code>0x13-more_singly_linked_lists</code></li>
-            <li>File: <code>7-get_nodeint.c</code></li>
-        </ul>
+<p><strong>Repo:</strong></p>
+<ul>
+<li>GitHub repository: <code>alx-low_level_programming</code></li>
+<li>Directory: <code>0x13-more_singly_linked_lists</code></li>
+<li>File: <code>7-get_nodeint.c</code></li>
+</ul>
 
-    <h3 class="panel-title">
-      8. Sum list
-    </h3>
+<h3 class="panel-title">
+8. Sum list
+   </h3>
 
 
-    <p>Write a function that returns the sum of all the data (n) of a <code>listint_t</code> linked list.</p>
+<p>Write a function that returns the sum of all the data (n) of a <code>listint_t</code> linked list.</p>
 
 <ul>
 <li>Prototype: <code>int sum_listint(listint_t *head);</code></li>
@@ -656,28 +656,28 @@ julien@ubuntu:~/0x13. More singly linked lists$
 #include &quot;lists.h&quot;
 
 /**
- * main - check the code
- *
- * Return: Always 0.
- */
+* main - check the code
+*
+* Return: Always 0.
+*/
 int main(void)
 {
-    listint_t *head;
-    int sum;
+listint_t *head;
+int sum;
 
-    head = NULL;
-    add_nodeint_end(&amp;head, 0);
-    add_nodeint_end(&amp;head, 1);
-    add_nodeint_end(&amp;head, 2);
-    add_nodeint_end(&amp;head, 3);
-    add_nodeint_end(&amp;head, 4);
-    add_nodeint_end(&amp;head, 98);
-    add_nodeint_end(&amp;head, 402);
-    add_nodeint_end(&amp;head, 1024);
-    sum = sum_listint(head);
-    printf(&quot;sum = %d\n&quot;, sum);
-    free_listint2(&amp;head);
-    return (0);
+head = NULL;
+add_nodeint_end(&amp;head, 0);
+add_nodeint_end(&amp;head, 1);
+add_nodeint_end(&amp;head, 2);
+add_nodeint_end(&amp;head, 3);
+add_nodeint_end(&amp;head, 4);
+add_nodeint_end(&amp;head, 98);
+add_nodeint_end(&amp;head, 402);
+add_nodeint_end(&amp;head, 1024);
+sum = sum_listint(head);
+printf(&quot;sum = %d\n&quot;, sum);
+free_listint2(&amp;head);
+return (0);
 }
 julien@ubuntu:~/c0x13. More singly linked lists$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 8-main.c 3-add_nodeint_end.c 5-free_listint2.c 8-sum_listint.c -o i
 julien@ubuntu:~/0x13. More singly linked lists$ ./i 
@@ -686,19 +686,19 @@ julien@ubuntu:~/0x13. More singly linked lists$
 </code></pre>
 
 
-        <p><strong>Repo:</strong></p>
-        <ul>
-          <li>GitHub repository: <code>alx-low_level_programming</code></li>
-            <li>Directory: <code>0x13-more_singly_linked_lists</code></li>
-            <li>File: <code>8-sum_listint.c</code></li>
-        </ul>
+<p><strong>Repo:</strong></p>
+<ul>
+<li>GitHub repository: <code>alx-low_level_programming</code></li>
+<li>Directory: <code>0x13-more_singly_linked_lists</code></li>
+<li>File: <code>8-sum_listint.c</code></li>
+</ul>
 
-    <h3 class="panel-title">
-      9. Insert
-    </h3>
+<h3 class="panel-title">
+9. Insert
+   </h3>
 
 
-    <p>Write a function that inserts a new node at a given position.</p>
+<p>Write a function that inserts a new node at a given position.</p>
 
 <ul>
 <li>Prototype: <code>listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n);</code></li>
@@ -714,29 +714,29 @@ julien@ubuntu:~/0x13. More singly linked lists$
 #include &quot;lists.h&quot;
 
 /**
- * main - check the code
- *
- * Return: Always 0.
- */
+* main - check the code
+*
+* Return: Always 0.
+*/
 int main(void)
 {
-    listint_t *head;
+listint_t *head;
 
-    head = NULL;
-    add_nodeint_end(&amp;head, 0);
-    add_nodeint_end(&amp;head, 1);
-    add_nodeint_end(&amp;head, 2);
-    add_nodeint_end(&amp;head, 3);
-    add_nodeint_end(&amp;head, 4);
-    add_nodeint_end(&amp;head, 98);
-    add_nodeint_end(&amp;head, 402);
-    add_nodeint_end(&amp;head, 1024);
-    print_listint(head);
-    printf(&quot;-----------------\n&quot;);
-    insert_nodeint_at_index(&amp;head, 5, 4096);
-    print_listint(head);
-    free_listint2(&amp;head);
-    return (0);
+head = NULL;
+add_nodeint_end(&amp;head, 0);
+add_nodeint_end(&amp;head, 1);
+add_nodeint_end(&amp;head, 2);
+add_nodeint_end(&amp;head, 3);
+add_nodeint_end(&amp;head, 4);
+add_nodeint_end(&amp;head, 98);
+add_nodeint_end(&amp;head, 402);
+add_nodeint_end(&amp;head, 1024);
+print_listint(head);
+printf(&quot;-----------------\n&quot;);
+insert_nodeint_at_index(&amp;head, 5, 4096);
+print_listint(head);
+free_listint2(&amp;head);
+return (0);
 }
 julien@ubuntu:~/0x13. More singly linked lists$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 9-main.c 3-add_nodeint_end.c 0-print_listint.c 5-free_listint2.c 9-insert_nodeint.c -o j
 julien@ubuntu:~/0x13. More singly linked lists$ ./j 
@@ -763,18 +763,18 @@ julien@ubuntu:~/0x13. More singly linked lists$
 
 
 <p><strong>Repo:</strong></p>
-        <ul>
-          <li>GitHub repository: <code>alx-low_level_programming</code></li>
-            <li>Directory: <code>0x13-more_singly_linked_lists</code></li>
-            <li>File: <code>9-insert_nodeint.c</code></li>
+<ul>
+<li>GitHub repository: <code>alx-low_level_programming</code></li>
+<li>Directory: <code>0x13-more_singly_linked_lists</code></li>
+<li>File: <code>9-insert_nodeint.c</code></li>
 </ul>
 
 <h3 class="panel-title">
-      10. Delete at index
-</h3>
+10. Delete at index
+    </h3>
 
 
-    <p>Write a function that deletes the node at index <code>index</code> of a <code>listint_t</code> linked list.</p>
+<p>Write a function that deletes the node at index <code>index</code> of a <code>listint_t</code> linked list.</p>
 
 <ul>
 <li>Prototype: <code>int delete_nodeint_at_index(listint_t **head, unsigned int index);</code></li>
@@ -789,67 +789,67 @@ julien@ubuntu:~/0x13. More singly linked lists$
 #include &quot;lists.h&quot;
 
 /**
- * main - check the code
- *
- * Return: Always 0.
- */
+* main - check the code
+*
+* Return: Always 0.
+*/
 int main(void)
 {
-    listint_t *head;
+listint_t *head;
 
-    head = NULL;
-    add_nodeint_end(&amp;head, 0);
-    add_nodeint_end(&amp;head, 1);
-    add_nodeint_end(&amp;head, 2);
-    add_nodeint_end(&amp;head, 3);
-    add_nodeint_end(&amp;head, 4);
-    add_nodeint_end(&amp;head, 98);
-    add_nodeint_end(&amp;head, 402);
-    add_nodeint_end(&amp;head, 1024);
-    print_listint(head);
-    printf(&quot;-----------------\n&quot;);
-    delete_nodeint_at_index(&amp;head, 5);
-    print_listint(head);
-    printf(&quot;-----------------\n&quot;);
-    delete_nodeint_at_index(&amp;head, 0);
-    print_listint(head);
-    printf(&quot;-----------------\n&quot;);
-    delete_nodeint_at_index(&amp;head, 0);
-    print_listint(head);
-    printf(&quot;-----------------\n&quot;);
-    delete_nodeint_at_index(&amp;head, 0);
-    print_listint(head);
-    printf(&quot;-----------------\n&quot;);
-    delete_nodeint_at_index(&amp;head, 0);
-    print_listint(head);
-    printf(&quot;-----------------\n&quot;);
-    delete_nodeint_at_index(&amp;head, 0);
-    print_listint(head);
-    printf(&quot;-----------------\n&quot;);
-    delete_nodeint_at_index(&amp;head, 0);
-    print_listint(head);
-    printf(&quot;-----------------\n&quot;);
-    delete_nodeint_at_index(&amp;head, 0);
-    printf(&quot;-----------------\n&quot;);
-    delete_nodeint_at_index(&amp;head, 0);
-    printf(&quot;-----------------\n&quot;);
-    delete_nodeint_at_index(&amp;head, 0);
-    printf(&quot;-----------------\n&quot;);
-    delete_nodeint_at_index(&amp;head, 0);
-    printf(&quot;-----------------\n&quot;);
-    delete_nodeint_at_index(&amp;head, 0);
-    printf(&quot;-----------------\n&quot;);
-    delete_nodeint_at_index(&amp;head, 0);
-    printf(&quot;-----------------\n&quot;);
-    delete_nodeint_at_index(&amp;head, 0);
-    printf(&quot;-----------------\n&quot;);
-    delete_nodeint_at_index(&amp;head, 0);
-    printf(&quot;-----------------\n&quot;);
-    delete_nodeint_at_index(&amp;head, 0);
-    printf(&quot;-----------------\n&quot;);
-    delete_nodeint_at_index(&amp;head, 0);
-    print_listint(head);
-    return (0);
+head = NULL;
+add_nodeint_end(&amp;head, 0);
+add_nodeint_end(&amp;head, 1);
+add_nodeint_end(&amp;head, 2);
+add_nodeint_end(&amp;head, 3);
+add_nodeint_end(&amp;head, 4);
+add_nodeint_end(&amp;head, 98);
+add_nodeint_end(&amp;head, 402);
+add_nodeint_end(&amp;head, 1024);
+print_listint(head);
+printf(&quot;-----------------\n&quot;);
+delete_nodeint_at_index(&amp;head, 5);
+print_listint(head);
+printf(&quot;-----------------\n&quot;);
+delete_nodeint_at_index(&amp;head, 0);
+print_listint(head);
+printf(&quot;-----------------\n&quot;);
+delete_nodeint_at_index(&amp;head, 0);
+print_listint(head);
+printf(&quot;-----------------\n&quot;);
+delete_nodeint_at_index(&amp;head, 0);
+print_listint(head);
+printf(&quot;-----------------\n&quot;);
+delete_nodeint_at_index(&amp;head, 0);
+print_listint(head);
+printf(&quot;-----------------\n&quot;);
+delete_nodeint_at_index(&amp;head, 0);
+print_listint(head);
+printf(&quot;-----------------\n&quot;);
+delete_nodeint_at_index(&amp;head, 0);
+print_listint(head);
+printf(&quot;-----------------\n&quot;);
+delete_nodeint_at_index(&amp;head, 0);
+printf(&quot;-----------------\n&quot;);
+delete_nodeint_at_index(&amp;head, 0);
+printf(&quot;-----------------\n&quot;);
+delete_nodeint_at_index(&amp;head, 0);
+printf(&quot;-----------------\n&quot;);
+delete_nodeint_at_index(&amp;head, 0);
+printf(&quot;-----------------\n&quot;);
+delete_nodeint_at_index(&amp;head, 0);
+printf(&quot;-----------------\n&quot;);
+delete_nodeint_at_index(&amp;head, 0);
+printf(&quot;-----------------\n&quot;);
+delete_nodeint_at_index(&amp;head, 0);
+printf(&quot;-----------------\n&quot;);
+delete_nodeint_at_index(&amp;head, 0);
+printf(&quot;-----------------\n&quot;);
+delete_nodeint_at_index(&amp;head, 0);
+printf(&quot;-----------------\n&quot;);
+delete_nodeint_at_index(&amp;head, 0);
+print_listint(head);
+return (0);
 }
 julien@ubuntu:~/0x13. More singly linked lists$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 10-main.c 3-add_nodeint_end.c 0-print_listint.c 5-free_listint2.c 10-delete_nodeint.c -o k
 julien@ubuntu:~/0x13. More singly linked lists$ valgrind ./k 
@@ -926,17 +926,17 @@ julien@ubuntu:~/0x13. More singly linked lists$
 
 <p><strong>Repo:</strong></p>
 <ul>
-          <li>GitHub repository: <code>alx-low_level_programming</code></li>
-            <li>Directory: <code>0x13-more_singly_linked_lists</code></li>
-            <li>File: <code>10-delete_nodeint.c</code></li>
+<li>GitHub repository: <code>alx-low_level_programming</code></li>
+<li>Directory: <code>0x13-more_singly_linked_lists</code></li>
+<li>File: <code>10-delete_nodeint.c</code></li>
 </ul>
 
 <h3 class="panel-title">
-      11. Reverse list
+11. Reverse list
     </h3>
 
 
-    <p>Write a function that reverses a <code>listint_t</code> linked list.</p>
+<p>Write a function that reverses a <code>listint_t</code> linked list.</p>
 
 <ul>
 <li>Prototype: <code>listint_t *reverse_listint(listint_t **head);</code></li>
@@ -953,28 +953,28 @@ julien@ubuntu:~/0x13. More singly linked lists$
 #include &quot;lists.h&quot;
 
 /**
- * main - check the code
- *
- * Return: Always 0.
- */
+* main - check the code
+*
+* Return: Always 0.
+*/
 int main(void)
 {
-    listint_t *head;
+listint_t *head;
 
-    head = NULL;
-    add_nodeint_end(&amp;head, 0);
-    add_nodeint_end(&amp;head, 1);
-    add_nodeint_end(&amp;head, 2);
-    add_nodeint_end(&amp;head, 3);
-    add_nodeint_end(&amp;head, 4);
-    add_nodeint_end(&amp;head, 98);
-    add_nodeint_end(&amp;head, 402);
-    add_nodeint_end(&amp;head, 1024);
-    print_listint(head);
-    reverse_listint(&amp;head);
-    print_listint(head);    
-    free_listint2(&amp;head);
-    return (0);
+head = NULL;
+add_nodeint_end(&amp;head, 0);
+add_nodeint_end(&amp;head, 1);
+add_nodeint_end(&amp;head, 2);
+add_nodeint_end(&amp;head, 3);
+add_nodeint_end(&amp;head, 4);
+add_nodeint_end(&amp;head, 98);
+add_nodeint_end(&amp;head, 402);
+add_nodeint_end(&amp;head, 1024);
+print_listint(head);
+reverse_listint(&amp;head);
+print_listint(head);    
+free_listint2(&amp;head);
+return (0);
 }
 julien@ubuntu:~/0x13. More singly linked lists$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 100-main.c 3-add_nodeint_end.c 0-print_listint.c 5-free_listint2.c 100-reverse_listint.c -o l
 julien@ubuntu:~/0x13. More singly linked lists$ valgrind ./l 
@@ -1014,17 +1014,17 @@ julien@ubuntu:~/0x13. More singly linked lists$
 
 <p><strong>Repo:</strong></p>
 <ul>
-          <li>GitHub repository: <code>alx-low_level_programming</code></li>
-            <li>Directory: <code>0x13-more_singly_linked_lists</code></li>
-            <li>File: <code>100-reverse_listint.c</code></li>
+<li>GitHub repository: <code>alx-low_level_programming</code></li>
+<li>Directory: <code>0x13-more_singly_linked_lists</code></li>
+<li>File: <code>100-reverse_listint.c</code></li>
 </ul>
 
 <h3 class="panel-title">
-      12. Print (safe version)
+12. Print (safe version)
     </h3>
 
 
-    <p>Write a function that prints a <code>listint_t</code> linked list.</p>
+<p>Write a function that prints a <code>listint_t</code> linked list.</p>
 
 <ul>
 <li>Prototype: <code>size_t print_listint_safe(const listint_t *head);</code></li>
@@ -1042,37 +1042,37 @@ julien@ubuntu:~/0x13. More singly linked lists$
 #include &quot;lists.h&quot;
 
 /**
- * main - check the code
- *
- * Return: Always 0.
- */
+* main - check the code
+*
+* Return: Always 0.
+*/
 int main(void)
 {
-    listint_t *head;
-    listint_t *head2;
-    listint_t *node;
+listint_t *head;
+listint_t *head2;
+listint_t *node;
 
-    head2 = NULL;
-    add_nodeint(&amp;head2, 0);
-    add_nodeint(&amp;head2, 1);
-    add_nodeint(&amp;head2, 2);
-    add_nodeint(&amp;head2, 3);
-    add_nodeint(&amp;head2, 4);
-    add_nodeint(&amp;head2, 98);
-    add_nodeint(&amp;head2, 402);
-    add_nodeint(&amp;head2, 1024);
-    print_listint_safe(head2);
-    head = NULL;
-    node = add_nodeint(&amp;head, 0);
-    add_nodeint(&amp;head, 1);
-    add_nodeint(&amp;head, 2);
-    add_nodeint(&amp;head, 3);
-    add_nodeint(&amp;head, 4);
-    node-&gt;next = add_nodeint(&amp;head, 98);
-    add_nodeint(&amp;head, 402);
-    add_nodeint(&amp;head, 1024);
-    print_listint_safe(head);
-    return (0);
+head2 = NULL;
+add_nodeint(&amp;head2, 0);
+add_nodeint(&amp;head2, 1);
+add_nodeint(&amp;head2, 2);
+add_nodeint(&amp;head2, 3);
+add_nodeint(&amp;head2, 4);
+add_nodeint(&amp;head2, 98);
+add_nodeint(&amp;head2, 402);
+add_nodeint(&amp;head2, 1024);
+print_listint_safe(head2);
+head = NULL;
+node = add_nodeint(&amp;head, 0);
+add_nodeint(&amp;head, 1);
+add_nodeint(&amp;head, 2);
+add_nodeint(&amp;head, 3);
+add_nodeint(&amp;head, 4);
+node-&gt;next = add_nodeint(&amp;head, 98);
+add_nodeint(&amp;head, 402);
+add_nodeint(&amp;head, 1024);
+print_listint_safe(head);
+return (0);
 }
 julien@ubuntu:~/0x13. More singly linked lists$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 101-main.c 2-add_nodeint.c 101-print_listint_safe.c -o m
 julien@ubuntu:~/0x13. More singly linked lists$ ./m
@@ -1100,16 +1100,16 @@ julien@ubuntu:~/0x13. More singly linked lists$
 <p><strong>Repo:</strong></p>
 <ul>
 <li>GitHub repository: <code>alx-low_level_programming</code></li>
-            <li>Directory: <code>0x13-more_singly_linked_lists</code></li>
-				<li>File: <code>101-print_listint_safe.c</code></li>
+<li>Directory: <code>0x13-more_singly_linked_lists</code></li>
+<li>File: <code>101-print_listint_safe.c</code></li>
 </ul>
 
 <h3 class="panel-title">
-      13. Free (safe version)
-</h3>
+13. Free (safe version)
+    </h3>
 
 
-    <p>Write a function that frees a <code>listint_t</code> list.</p>
+<p>Write a function that frees a <code>listint_t</code> list.</p>
 
 <ul>
 <li>Prototype: <code>size_t free_listint_safe(listint_t **h);</code></li>
@@ -1126,40 +1126,40 @@ julien@ubuntu:~/0x13. More singly linked lists$
 #include &quot;lists.h&quot;
 
 /**
- * main - check the code
- *
- * Return: Always 0.
- */
+* main - check the code
+*
+* Return: Always 0.
+*/
 int main(void)
 {
-    listint_t *head;
-    listint_t *head2;
-    listint_t *node;
+listint_t *head;
+listint_t *head2;
+listint_t *node;
 
-    head2 = NULL;
-    add_nodeint(&amp;head2, 0);
-    add_nodeint(&amp;head2, 1);
-    add_nodeint(&amp;head2, 2);
-    add_nodeint(&amp;head2, 3);
-    add_nodeint(&amp;head2, 4);
-    add_nodeint(&amp;head2, 98);
-    add_nodeint(&amp;head2, 402);
-    add_nodeint(&amp;head2, 1024);
-    print_listint_safe(head2);
-    head = NULL;
-    node = add_nodeint(&amp;head, 0);
-    add_nodeint(&amp;head, 1);
-    add_nodeint(&amp;head, 2);
-    add_nodeint(&amp;head, 3);
-    add_nodeint(&amp;head, 4);
-    node-&gt;next = add_nodeint(&amp;head, 98);
-    add_nodeint(&amp;head, 402);
-    add_nodeint(&amp;head, 1024);
-    print_listint_safe(head);
-    free_listint_safe(&amp;head2);
-    free_listint_safe(&amp;head);
-    printf(&quot;%p, %p\n&quot;, (void *)head2, (void *)head);
-    return (0);
+head2 = NULL;
+add_nodeint(&amp;head2, 0);
+add_nodeint(&amp;head2, 1);
+add_nodeint(&amp;head2, 2);
+add_nodeint(&amp;head2, 3);
+add_nodeint(&amp;head2, 4);
+add_nodeint(&amp;head2, 98);
+add_nodeint(&amp;head2, 402);
+add_nodeint(&amp;head2, 1024);
+print_listint_safe(head2);
+head = NULL;
+node = add_nodeint(&amp;head, 0);
+add_nodeint(&amp;head, 1);
+add_nodeint(&amp;head, 2);
+add_nodeint(&amp;head, 3);
+add_nodeint(&amp;head, 4);
+node-&gt;next = add_nodeint(&amp;head, 98);
+add_nodeint(&amp;head, 402);
+add_nodeint(&amp;head, 1024);
+print_listint_safe(head);
+free_listint_safe(&amp;head2);
+free_listint_safe(&amp;head);
+printf(&quot;%p, %p\n&quot;, (void *)head2, (void *)head);
+return (0);
 }
 julien@ubuntu:~/0x13. More singly linked lists$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 102-main.c 2-add_nodeint.c 101-print_listint_safe.c 102-free_listint_safe.c -o n
 julien@ubuntu:~/0x13. More singly linked lists$ ./n 
@@ -1186,15 +1186,15 @@ julien@ubuntu:~/0x13. More singly linked lists$
 
 
 <p><strong>Repo:</strong></p>
-        <ul>
+<ul>
 <li>GitHub repository: <code>alx-low_level_programming</code></li>
 <li>Directory: <code>0x13-more_singly_linked_lists</code></li>
 <li>File: <code>102-free_listint_safe.c</code></li>
 </ul>
 
 <h3 class="panel-title">
-14. Find the loop
-</h3>
+    14. Find the loop
+	</h3>
 
 
 <p>Write a function that finds the loop in a linked list.</p>
@@ -1213,52 +1213,52 @@ julien@ubuntu:~/0x13. More singly linked lists$
 #include &quot;lists.h&quot;
 
 /**
- * main - check the code
- *
- * Return: Always 0.
- */
+* main - check the code
+*
+* Return: Always 0.
+*/
 int main(void)
 {
-    listint_t *head;
-    listint_t *head2;
-    listint_t *node;
+listint_t *head;
+listint_t *head2;
+listint_t *node;
 
-    head2 = NULL;
-    add_nodeint(&amp;head2, 0);
-    add_nodeint(&amp;head2, 1);
-    add_nodeint(&amp;head2, 2);
-    add_nodeint(&amp;head2, 3);
-    add_nodeint(&amp;head2, 4);
-    add_nodeint(&amp;head2, 98);
-    add_nodeint(&amp;head2, 402);
-    add_nodeint(&amp;head2, 1024);
-    print_listint_safe(head2);
-    node = find_listint_loop(head2);
-    if (node != NULL)
-    {
-        printf(&quot;Loop starts at [%p] %d\n&quot;, (void *)node, node-&gt;n);
-    }
-    free_listint_safe(&amp;head2);
-    head = NULL;
-    node = add_nodeint(&amp;head, 0);
-    add_nodeint(&amp;head, 1);
-    add_nodeint(&amp;head, 2);
-    add_nodeint(&amp;head, 3);
-    add_nodeint(&amp;head, 4);
-    add_nodeint(&amp;head, 5);
-    add_nodeint(&amp;head, 6);
-    node-&gt;next = add_nodeint(&amp;head, 7);
-    add_nodeint(&amp;head, 98);
-    add_nodeint(&amp;head, 402);
-    add_nodeint(&amp;head, 1024);
-    print_listint_safe(head);
-    node = find_listint_loop(head);
-    if (node != NULL)
-    {
-        printf(&quot;Loop starts at [%p] %d\n&quot;, (void *)node, node-&gt;n);
-    }
-    free_listint_safe(&amp;head);
-    return (0);
+head2 = NULL;
+add_nodeint(&amp;head2, 0);
+add_nodeint(&amp;head2, 1);
+add_nodeint(&amp;head2, 2);
+add_nodeint(&amp;head2, 3);
+add_nodeint(&amp;head2, 4);
+add_nodeint(&amp;head2, 98);
+add_nodeint(&amp;head2, 402);
+add_nodeint(&amp;head2, 1024);
+print_listint_safe(head2);
+node = find_listint_loop(head2);
+if (node != NULL)
+{
+printf(&quot;Loop starts at [%p] %d\n&quot;, (void *)node, node-&gt;n);
+}
+free_listint_safe(&amp;head2);
+head = NULL;
+node = add_nodeint(&amp;head, 0);
+add_nodeint(&amp;head, 1);
+add_nodeint(&amp;head, 2);
+add_nodeint(&amp;head, 3);
+add_nodeint(&amp;head, 4);
+add_nodeint(&amp;head, 5);
+add_nodeint(&amp;head, 6);
+node-&gt;next = add_nodeint(&amp;head, 7);
+add_nodeint(&amp;head, 98);
+add_nodeint(&amp;head, 402);
+add_nodeint(&amp;head, 1024);
+print_listint_safe(head);
+node = find_listint_loop(head);
+if (node != NULL)
+{
+printf(&quot;Loop starts at [%p] %d\n&quot;, (void *)node, node-&gt;n);
+}
+free_listint_safe(&amp;head);
+return (0);
 }
 julien@ubuntu:~/0x13. More singly linked lists$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 103-main.c 2-add_nodeint.c 101-print_listint_safe.c 102-free_listint_safe.c 103-find_loop.c -o o
 julien@ubuntu:~/0x13. More singly linked lists$ ./o 
