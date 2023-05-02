@@ -31,10 +31,12 @@ size_t print_listint_safe(const listint_t *head)
 		add_arr = realloc(add_arr, sizeof(add_arr)*(cnt + 1));
 		if (add_arr == NULL)
 			exit (98);
+
 		add_arr[cnt] = head;
 		printf("[%p] %d\n",(void *)head, head->n);
 		head = head->next;
 		cnt++;
 	}
+	free(add_arr);
 	return (cnt);
 }
