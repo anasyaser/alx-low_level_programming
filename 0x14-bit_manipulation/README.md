@@ -365,6 +365,8 @@ julien@ubuntu:~/0x14. Binary$
 </ul>
 
 <h3 class="panel-title">
+6. Endianness
+</h3>
 
 <p>Write a function that checks the endianness.</p>
 
