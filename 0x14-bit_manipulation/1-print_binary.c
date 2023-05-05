@@ -9,14 +9,20 @@
 
 void print_binary(unsigned long int n)
 {
-	int idx = 63;
+	int idx;
+	int flag = 0;
 
-	while (idx)
+	for (idx = 31; idx >= 0; idx--)
 	{
 		if (n & (1 << idx))
+		{
+			flag = 1;
 			_putchar('1');
+		}
 		else
-			_putchar('0');
-		idx--;
+			if (flag)
+				_putchar('0');
 	}
+	if (!flag)
+		_putchar('0');
 }
