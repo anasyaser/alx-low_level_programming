@@ -22,8 +22,7 @@ int main(int argc, char **argv)
 		exit(97);
 	}
 
-	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC | O_APPEND,
-		     S_IRWXU | S_IRWXG);
+	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC | O_APPEND, 0664);
 	fd_from = open(argv[1], O_RDONLY);
 	if (fd_from == -1)
 	{
