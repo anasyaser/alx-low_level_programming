@@ -20,7 +20,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 		return (0);
-
+	/* need to modified to handle if read or write return -1 or error*/
 	while (letters && read(fd, &cur, 1))
 	{
 		number += write(STDOUT_FILENO, &cur, 1);
