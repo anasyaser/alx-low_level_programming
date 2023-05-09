@@ -21,7 +21,6 @@ int main(int argc, char **argv)
 			argv[0]);
 		exit(97);
 	}
-
 	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC | O_APPEND, 0664);
 	fd_from = open(argv[1], O_RDONLY);
 	if (fd_from == -1)
@@ -42,12 +41,11 @@ int main(int argc, char **argv)
 		}
 		flag = read(fd_from, cur, 1024);
 	}
-
-	if (close(fd_to))
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_to);
-	if (close(fd_from))
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_from);
-
+	if (close(fd_to) || close(fd_from))
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", -1);
+		exit(100);
+	}
 	return (0);
 }
 
