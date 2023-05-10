@@ -102,11 +102,11 @@
     All my life&#39;s buried here,
     Heap earth upon it.
     julien@ubuntu:~/0x15. File descriptors and permissions$ cat 0-main.c
-    #include &lt;stdio.h&gt;
+#include &lt;stdio.h&gt;
     #include &lt;stdlib.h&gt;
     #include &quot;main.h&quot;
 
-    /**
+/**
     * main - check the code
     *
     * Return: Always 0.
@@ -197,7 +197,7 @@
     #include &lt;stdlib.h&gt;
     #include &quot;main.h&quot;
 
-    /**
+/**
     * main - check the code
     *
     * Return: Always 0.
@@ -250,10 +250,10 @@
 
 <pre><code>julien@ubuntu:~/0x15. File descriptors and permissions$ cat 2-main.c
     #include &lt;stdio.h&gt;
-    #include &lt;stdlib.h&gt;
-    #include &quot;main.h&quot;
+		#include &lt;stdlib.h&gt;
+		#include &quot;main.h&quot;
 
-    /**
+/**
     * main - check the code
     *
     * Return: Always 0.
@@ -304,17 +304,17 @@
   <li>if <code>file_to</code> already exists, truncate it</li>
   <li>if <code>file_from</code> does not exist, or if you can not read it, exit with code <code>98</code> and print <code>Error: Can&#39;t read from file NAME_OF_THE_FILE</code>, followed by a new line, on the <code>POSIX</code> standard error
 
-    <ul>
+<ul>
       <li>where <code>NAME_OF_THE_FILE</code> is the first argument passed to your program</li>
   </ul></li>
   <li>if you can not create or if <code>write</code> to <code>file_to</code> fails, exit with code <code>99</code> and print <code>Error: Can&#39;t write to NAME_OF_THE_FILE</code>, followed by a new line, on the <code>POSIX</code> standard error
 
-    <ul>
+<ul>
       <li>where <code>NAME_OF_THE_FILE</code> is the second argument passed to your program</li>
   </ul></li>
   <li>if you can not close a file descriptor , exit with code <code>100</code> and print <code>Error: Can&#39;t close fd FD_VALUE</code>, followed by a new line, on the <code>POSIX</code> standard error
 
-    <ul>
+<ul>
       <li>where <code>FD_VALUE</code> is the value of the file descriptor</li>
   </ul></li>
   <li>Permissions of the created file: <code>rw-rw-r--</code>. If the file already exists, do not change the permissions</li>
@@ -358,16 +358,17 @@
   <li>Usage: <code>elf_header elf_filename</code></li>
   <li>Displayed information: (no less, no more, do not include trailing whitespace)
 
-    <ul>
-      <li>Magic</li>
-      <li>Class</li>
-      <li>Data</li>
-      <li>Version</li>
-      <li>OS/ABI</li>
-      <li>ABI Version</li>
-      <li>Type</li>
-      <li>Entry point address</li>
-  </ul></li>
+<ul>
+<li>Magic</li>
+<li>Class</li>
+<li>Data</li>
+<li>Version</li>
+<li>OS/ABI</li>
+<li>ABI Version</li>
+<li>Type</li>
+<li>Entry point address</li>
+</ul></li>
+  
   <li>Format: the same as <code>readelf -h</code> (<em>version <code>2.26.1</code></em>)</li>
   <li>If the file is not an <code>ELF</code> file, or on error, exit with status code <code>98</code> and display a comprehensive error message to <code>stderr</code></li>
   <li>You are allowed to use <code>lseek</code> once</li>
