@@ -8,12 +8,12 @@
  * Return: pointer to new added value
  */
 
-listint_t *add_nodeint_end(listint_t **head, const int n)
+dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-	listint_t *new_node;
-	listint_t *current = *head;
+	dlistint_t *new_node;
+	dlistint_t *current = *head;
 
-	new_node = malloc(sizeof(listint_t));
+	new_node = malloc(sizeof(dlistint_t));
 	if (new_node == NULL)
 		return (NULL);
 
@@ -28,6 +28,7 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 		current = current->next;
 
 	current->next = new_node;
+	new_node->prev = current;
 	new_node->next = NULL;
 
 	return (new_node);
