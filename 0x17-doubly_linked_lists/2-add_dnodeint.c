@@ -2,6 +2,7 @@
 
 /**
  * add_dnodeint - add node at the beginning
+ * @n: node value
  * @head: pointer to head node
  * Return: pointer to added node or null if fail
  *
