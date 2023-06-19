@@ -1,0 +1,11 @@
+
+** 0x18-dynamic_libraries
+|----+--------------------+--------+-----+----------|
+| No | Name               | status | rev | Note     |
+|----+--------------------+--------+-----+----------|
+|  0 | libdynamic         | Done   |   0 |          |
+|  1 | create dynamic lib | Done   |   0 |          |
+|  2 | operations         | Done   |   0 | Advanced |
+|  3 | make me win        |        |     | Advanced |
+|----+--------------------+--------+-----+----------|
+
