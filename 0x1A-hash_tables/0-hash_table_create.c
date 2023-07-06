@@ -20,7 +20,10 @@ hash_table_t *hash_table_create(unsigned long int size)
 
 	array = (hash_node_t **)malloc(sizeof(hash_node_t) * size);
 	if (array == NULL)
+	{
+		free(new_hash_t);
 		return (NULL);
+	}
 	new_hash_t->array = array;
 
 	return (new_hash_t);
