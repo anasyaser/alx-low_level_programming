@@ -1,5 +1,13 @@
 #include "hash_tables.h"
 
+/**
+ * create_hash_node - create new hashnode
+ *
+ * @key: key of node
+ * @value: key value
+ * Return: pointer to new created hash node
+ */
+
 hash_node_t *create_hash_node(const char *key, const char *value)
 {
 	hash_node_t *new_node;
@@ -34,11 +42,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int index;
 	hash_node_t *at_index_node;
 
-	if (!*key)
+	if (!*key || !ht)
 		return (0);
 	index = key_index((const unsigned char *)key, ht->size);
 	at_index_node = ht->array[index];
-	while(at_index_node)
+	while (at_index_node)
 	{
 		if (strcmp(at_index_node->key, key) == 0)
 		{
