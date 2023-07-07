@@ -50,6 +50,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (strcmp(at_index_node->key, key) == 0)
 		{
+			free(at_index_node->value);
 			at_index_node->value = malloc(sizeof(strlen(value)) + 1);
 			if (at_index_node->value == NULL)
 				return (0);
