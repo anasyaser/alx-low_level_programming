@@ -2,6 +2,5 @@ CC = cc
 SRC = school.c main.c
 
 all: school
-
 school: $(SRC) m.h
 	$(CC) $(SRC) -o school

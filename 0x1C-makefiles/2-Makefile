@@ -1,0 +1,16 @@
+all: school
+CC: gcc
+SRC: school.c main.c
+OBJ: school.o main.o
+NAME: school
+
+all: $(NAME)
+
+$(NAME): school.o main.o m.h
+	$(CC) -o school main.o school.o
+
+school.o : school.c m.h
+	gcc -c school.c
+
+main.o: main.c m.h
+	gcc -c main.c
