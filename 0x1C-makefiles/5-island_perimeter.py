@@ -13,3 +13,14 @@ def island_perimeter(grid):
 
 def get_surround(i, j, grid):
     return (grid[i][j + 1], grid[j][j - 1], grid[i - 1][j], grid[i + 1][j])
+
+
+if __name__ == "__main__":
+    grid = [
+        [0, 0, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0],
+        [0, 1, 1, 1, 0, 0],
+        [0, 0, 0, 0, 0, 0]
+    ]
+    print(island_perimeter(grid))
