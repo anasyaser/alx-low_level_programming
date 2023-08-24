@@ -4,7 +4,7 @@
 def island_perimeter(grid):
     perimeter = 0
     for r in range(len(grid)):
-        for c in range(len(r)):
+        for c in range(len(grid[r])):
             if grid[r][c] == 1:
                 sur = get_surround(r, c, grid)
                 perimeter += sum([1 for w in sur if sur == 0])
