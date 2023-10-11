@@ -1,6 +1,28 @@
 #include "search_algos.h"
 
 /**
+ * print_array - print array elments
+ *
+ * @array: pointer to array
+ * @l: lower bound to start from
+ * @h: higher bound to end at
+ * Return: None
+ */
+
+void print_array(int *array, size_t l, size_t h)
+{
+	size_t i;
+
+	for (i = l; i < h + 1; i++)
+	{
+		printf("%d", array[i]);
+		if (i != h)
+			printf(", ");
+	}
+	printf("\n");
+}
+
+/**
  * binary_search - Binary search algorithm
  *
  * @array: array of elements to search in
@@ -11,14 +33,23 @@
 
 int binary_search(int *array, size_t size, int value)
 {
-	size_t mid;
+	size_t m;
+	size_t l;
+	size_t h;
 
-	mid = size / 2;
-	if (value == array[mid])
-		return (mid);
-	else if (value > array[mid])
-		return binary_search(array + mid + 1, size - mid, value);
-	else if(value < array[mid])
-		return binary_search(array, size - mid, value);
-
+	l = 0;
+	h = size - 1;
+	while (l < h || l == h)
+	{
+		printf("Searching in array: ");
+		print_array(array, l, h);
+		m = (l + h) / 2;
+		if (value > array[m])
+			l = m + 1;
+		else if (value < array[m])
+			h = m - 1;
+		else
+			return (m);
+	}
+	return (-1);
 }
