@@ -37,6 +37,8 @@ int binary_search(int *array, size_t size, int value)
 	size_t l;
 	size_t h;
 
+	if (!array)
+		return (-1);
 	l = 0;
 	h = size - 1;
 	while (l < h || l == h)
