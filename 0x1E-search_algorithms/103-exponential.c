@@ -57,11 +57,11 @@ int binary_search(int *array, size_t size, int value)
 }
 
 /**
- * min - get maximum of two numbers
+ * min - get minimum of two numbers
  *
  * @first: first number
  * @second: second number
- * Return Maximum number
+ * Return: minmum number
  */
 
 size_t min(size_t first, size_t second)
