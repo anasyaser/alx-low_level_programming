@@ -46,11 +46,12 @@ int advanced_binary_helper(int *array, size_t l, size_t h, size_t size,
 	print_array(array, l, h);
 
 	if (array[m - 1] == array[m] && value == array[m])
-		return advanced_binary_helper(array, l, m, size - m - 1,
+		return advanced_binary_helper(array, l, m, h - m, value);
+	else if (value < array[m])
+		return advanced_binary_helper(array, l, m - 1, h - m - 1,
 					      value);
 	else if (value > array[m])
-		return advanced_binary_helper(array, m + 1, h, h - m,
-					      value);
+		return advanced_binary_helper(array, m + 1, h, h - m, value);
 	else if (value == array[m])
 		return (m);
 	return (-1);
