@@ -1,16 +1,14 @@
-all: school
-CC: gcc
-SRC: school.c main.c
-OBJ: school.o main.o
-NAME: school
+CC= gcc
+SRC= school.c main.c
+OBJ= school.o main.o
 
-all: $(NAME)
+all: main.o school.o school
 
-$(NAME): school.o main.o m.h
-	$(CC) -o school main.o school.o
-
-school.o : school.c m.h
-	gcc -c school.c
+school: main.o school.o m.h
+	$(CC) main.o school.o -o school
 
 main.o: main.c m.h
-	gcc -c main.c
+	gcc -c -o main.o main.c
+
+school.o : school.c m.h
+	gcc -c -o school.o school.c
