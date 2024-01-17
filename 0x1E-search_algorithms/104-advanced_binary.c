@@ -49,7 +49,7 @@ int binary_search_helper(int *array, size_t start, size_t end, int value)
 		return (binary_search_helper(array, start, m - 1, value));
 	}
 	if (m && array[m - 1] == value)
-		return (binary_search_helper(array, start, m, value));
+		return (binary_search_helper(array, start, m - 1, value));
 	return (m);
 
 }
