@@ -26,6 +26,7 @@ void print_array(int *array, size_t l, size_t h)
  * @array: pointer to array to search in
  * @start: first index to start search from
  * @end: last index to stop start at
+ * @value: value to search for
  * Return: index if element if found else -1
  */
 
@@ -47,9 +48,9 @@ int binary_search_helper(int *array, size_t start, size_t end, int value)
 	{
 		return (binary_search_helper(array, start, m - 1, value));
 	}
-	if (m == 0 || array[m - 1] != value)
-		return (m);
-	return (binary_search_helper(array, start, m, value));
+	if (m && array[m - 1] == value)
+		return (binary_search_helper(array, start, m, value));
+	return (m);
 
 }
 
