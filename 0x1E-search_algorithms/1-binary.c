@@ -11,15 +11,12 @@
 
 void print_array(int *array, size_t l, size_t h)
 {
-	size_t i;
-
-	for (i = l; i < h + 1; i++)
+	while (l < h)
 	{
-		printf("%d", array[i]);
-		if (i != h)
-			printf(", ");
+		printf("%d,", array[l]);
+		l++;
 	}
-	printf("\n");
+	printf("%d\n", array[l]);
 }
 
 /**
