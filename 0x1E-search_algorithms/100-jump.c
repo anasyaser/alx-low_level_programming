@@ -1,23 +1,19 @@
-#include <stdio.h>
+#include "search_algos.h"
 #include <math.h>
 
 /**
- * print_array - print arrray of integers
+ * min - return minimum of two numbers
  *
- * @array: pointer to an array to print
- * @from: index to print from
- * @to: index to stop print at
- * Return: None
+ * @first: first number
+ * @second: second number
+ * Return: minimum number
  */
 
-void print_array(int *array, size_t from, size_t to)
+size_t min(size_t first, size_t second)
 {
-	while (from < to)
-	{
-		printf("%d,", array[from]);
-		from++;
-	}
-	printf("%d\n", array[from]);
+	if (first < second)
+		return (first);
+	return (second);
 }
 
 /**
@@ -32,24 +28,30 @@ void print_array(int *array, size_t from, size_t to)
 int jump_search(int *array, size_t size, int value)
 {
 	size_t l;
-	size_t k;
+	size_t step;
+	size_t h;
 
+	step = (int)sqrt(size);
 	l = 0;
-	k = (size_t) sqrt(size);
-	while ((k < (size + 1)) && (array[l] < value))
-	{
-		printf("Value checked array[%ld] = [%d]", l, array[l]);
-		l = k;
-		k = k + (int) sqrt(size);
-	}
-	if (l > size - 1)
+	h = step;
+
+	if (!array)
 		return (-1);
-	printf("Value found between indexes [%ld] and [%ld]", l, k);
-	while (l < k)
+
+	while ((h < size) && (array[h] < value))
 	{
-		printf("Value checked array[%ld] = [%d]", l, array[l]);
-		if (l == array[l])
+		printf("Value checked array[%lu] = [%d]\n", l, array[l]);
+		l = h;
+		h = h + step;
+	}
+	printf("Value found between indexes [%lu] and [%lu]\n", l, h);
+
+	while (l < min(size, h))
+	{
+		printf("Value checked array[%lu] = [%d]\n", l, array[l]);
+		if (array[l] == value)
 			return (l);
+		l++;
 	}
 	return (-1);
 }
