@@ -5,19 +5,19 @@
  * print_array - print arrray of integers
  *
  * @array: pointer to an array to print
- * @from: index to print from
- * @to: index to stop print at
+ * @l: index to print from
+ * @h: index to stop print at
  * Return: None
  */
 
-void print_array(int *array, size_t from, size_t to)
+void print_array(int *array, size_t l, size_t h)
 {
-	while (from < to)
+	while (l < h)
 	{
-		printf("%d,", array[from]);
-		from++;
+		printf("%d, ", array[l]);
+		l++;
 	}
-	printf("%d\n", array[from]);
+	printf("%d\n", array[l]);
 }
 
 /**
