@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "search_algos.h"
 
 
 /**
@@ -39,27 +39,18 @@ int binary_search_helper(int *array, size_t start, size_t end, int value)
 	printf("Searching in array: ");
 	print_array(array, start, end);
 
-	/* if (start == end) */
-	/* { */
-	/* 	if (array[start] == value) */
-	/* 		return (start); */
-	/* 	else */
-	/* 		return (-1); */
-	/* } */
-
 	m = (start + end) / 2;
 	if (value > array[m])
 	{
-		return binary_search_helper(array, m + 1, end, value);
+		return (binary_search_helper(array, m + 1, end, value));
 	} else if (value < array[m])
 	{
-		return binary_search_helper(array, start, m - 1, value);
-	} else
-	{
-		if (m == 0 || array[m - 1] != value)
-			return (m);
-		return (binary_search_helper(array, start, m, value));
+		return (binary_search_helper(array, start, m - 1, value));
 	}
+	if (m == 0 || array[m - 1] != value)
+		return (m);
+	return (binary_search_helper(array, start, m, value));
+
 }
 
 
