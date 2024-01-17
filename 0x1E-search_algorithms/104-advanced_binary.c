@@ -49,7 +49,7 @@ int binary_search_helper(int *array, size_t start, size_t end, int value)
 		return (binary_search_helper(array, start, m - 1, value));
 	}
 	if (m && array[m - 1] == value)
-		return (binary_search_helper(array, start, m - 1, value));
+		return (binary_search_helper(array, start, m, value));
 	return (m);
 
 }
@@ -66,5 +66,7 @@ int binary_search_helper(int *array, size_t start, size_t end, int value)
 
 int advanced_binary(int *array, size_t size, int value)
 {
+	if (array == NULL)
+		return (-1);
 	return (binary_search_helper(array, 0, size - 1, value));
 }
