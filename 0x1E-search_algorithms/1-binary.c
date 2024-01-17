@@ -1,32 +1,34 @@
 #include "search_algos.h"
 
-
 /**
- * print_array - print arrray of integers
+ * print_array - print array elments
  *
- * @array: pointer to an array to print
- * @from: index to print from
- * @to: index to stop print at
+ * @array: pointer to array
+ * @l: lower bound to start from
+ * @h: higher bound to end at
  * Return: None
  */
 
 void print_array(int *array, size_t l, size_t h)
 {
-	while (l < h)
+	size_t i;
+
+	for (i = l; i < h + 1; i++)
 	{
-		printf("%d,", array[l]);
-		l++;
+		printf("%d", array[i]);
+		if (i != h)
+			printf(", ");
 	}
-	printf("%d\n", array[l]);
+	printf("\n");
 }
 
 /**
- * binary_search - binary search algorithm
+ * binary_search - Binary search algorithm
  *
- * @array: pointer to array of integers to search in
- * @size: number of elements in array
- * @value: value to search for in array
- * Return: first index where value is located
+ * @array: array of elements to search in
+ * @size: number of array elements
+ * @value: element to search for
+ * Return: index of searched element if found else -1
  */
 
 int binary_search(int *array, size_t size, int value)
@@ -35,7 +37,7 @@ int binary_search(int *array, size_t size, int value)
 	size_t l;
 	size_t h;
 
-	if (array == NULL)
+	if (!array)
 		return (-1);
 	l = 0;
 	h = size - 1;
@@ -43,14 +45,13 @@ int binary_search(int *array, size_t size, int value)
 	{
 		printf("Searching in array: ");
 		print_array(array, l, h);
-		m = (h + l) / 2;
-		if (array[m] < value)
+		m = (l + h) / 2;
+		if (value > array[m])
 			l = m + 1;
-		else if (array[m] > value)
+		else if (value < array[m])
 			h = m - 1;
 		else
 			return (m);
-
 	}
 	return (-1);
 }
