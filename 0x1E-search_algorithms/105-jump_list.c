@@ -24,29 +24,28 @@ size_t min(size_t first, size_t second)
  * @value: value to search for in array
  * Return: first index where value is located
  */
-
-int jump_search(int *array, size_t size, int value)
+listint_t *jump_list(listint_t *list, size_t size, int value)
 {
-	size_t l;
+	listint_t *bound_s;
+	listint_t *current;
 	size_t step;
+	size_t i;
 	size_t h;
 
-	step = (int)sqrt(size);
-	l = 0;
-	h = 0;
-
-	if (array == NULL)
+	if (list == NULL)
 		return (-1);
 
-	while (h < size)
+	step = (int) sqrt(size);
+	current = list;
+	bound_s = list;
+	i = step;
+	while (current->next && current->n < value)
 	{
-		if (array[h] >= value)
-			break;
-		printf("Value checked array[%lu] = [%d]\n", h, array[h]);
-		l = h;
-		h = h + step;
+		while (current && i--)
+			current = current->next;
+		printf("Value checked array[%lu] = [%d]\n", bound_s->index,
+		       bound_s->n);
 	}
-	printf("Value found between indexes [%lu] and [%lu]\n", l, h);
 
 	while (l < min(size, h))
 	{
