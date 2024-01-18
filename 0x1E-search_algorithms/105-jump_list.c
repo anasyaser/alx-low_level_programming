@@ -17,9 +17,9 @@ size_t min(size_t first, size_t second)
 }
 
 /**
- * jump_search - jump search algorithm
+ * jump_list - jump search algorithm
  *
- * @array: pointer to array of integers to search in
+ * @list: pointer to head of singly linked list array of integers to search in
  * @size: number of elements in array
  * @value: value to search for in array
  * Return: first index where value is located
