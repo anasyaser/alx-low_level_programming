@@ -41,13 +41,10 @@ int binary_search_helper(int *array, size_t start, size_t end, int value)
 	print_array(array, start, end);
 
 	m = (start + end) / 2;
-	if (start == end)
-	{
-		if (value == array[m])
-			return (m);
-		else
-			return (-1);
-	}
+	if (array[start] == value)
+		return (start);
+	else if (start == end)
+		return (-1);
 	if (value > array[m])
 		return (binary_search_helper(array, m + 1, end, value));
 	return (binary_search_helper(array, start, m, value));
